@@ -1,0 +1,193 @@
+/* Div "uno" ocupa 100% */
+.usuario-div-uno {
+    background-color: orange;
+    width: 100%;
+}
+
+.texto3 {
+    font-size: 12px;
+    color: rgb(72, 72, 72);
+    margin-left: 10px;
+    height: 60px;
+}
+
+
+.usu-div-med{
+
+    background-color:white;
+    border: 1px solid yellow;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* 1 -------------- PERFIL Y VER HISTORIAL ----------------------------------------- */
+
+    /* 1  BOXS DE perfil y Historial --------------------------- */
+    .medico-item {box-sizing: border-box; width: 50%;
+    }
+
+    #miperfilmedico ,#nota{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        /* Distribuye los elementos equitativamente */
+        margin: 20px;
+        height: 200px;
+        border-radius: 10px;
+        transition:  0.3s ease-in-out;
+    }
+            /* 1 -------------- MI PERFIL MEDICO ----------------------------------------- */ 
+            #miperfilmedico{background-color: #F0F0F0;}
+            
+            #miperfilmedico:hover{background-color: #e7e7e7;
+                box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);}
+            /* 1 -------------- notas ----------------------------------------- */ 
+            #nota{background-color: #84CBF1;}  
+            
+            #nota:hover{background-color: #65aed5;
+                        box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);}  
+
+  
+/* 2 -------------- VER PACIENTES Y PUNTOS ----------------------------------------- */
+
+    /* 1  BOXS DE perfil y Historial --------------------------- */
+    .medico-item-pacientes{box-sizing: border-box; width: 25%;}
+    .infomispacientes {box-sizing: border-box; width: 75%;}
+
+    #seccionpacientes,.infomispa,#verseccionmedicamentos{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        /* Distribuye los elementos equitativamente */
+        margin: 20px;
+        height: 200px;
+        border-radius: 10px;
+        transition:  0.3s ease-in-out;
+    }
+
+    /* .infomispa{background-color:lightgray;} */
+        .infotexto{flex:1;
+            align-items: center;
+            margin: 20px;
+            display: flex;}
+
+            .textotitulo {
+                font-size: 24px;
+                color:#84CBF1;
+                font-weight: bold;
+                margin:40px 10px;
+            }     
+            .texto4 {
+                font-size: 18px;
+                margin-left: 20px;   
+                color: #00669C;
+            }
+            .bold{font-weight: bold;}
+
+            /* 2 -------------- VER MIS PACIENTES ----------------------------------------- */           
+            #seccionpacientes{background-color: #00669C;}
+            #seccionpacientes:hover{box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
+                background-color: #005c8d;}
+
+            .infomispa{border: 1px solid yellow;
+                justify-content: space-evenly;}
+              
+            /* 3 -------------- VER MEDICAMENTOS ----------------------------------------- */
+            .medico-item-medicamentos{box-sizing: border-box; width: 25%;}
+            #verseccionmedicamentos{background-color: #dac47c;}
+            #verseccionmedicamentos:hover{box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
+                background-color:  #dac47c;}
+
+/* 4 -------------- ASOCIAR Y CREAR ----------------------------------------- */
+
+    /*TAMAÑOS CAJAS LAS 2 --------------------------- */
+    .asociarcrear {  display: flex;
+         flex-direction: column;
+    }
+
+    #asociarpaciente ,#homecrearreceta{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        /* Distribuye los elementos equitativamente */
+        margin: 20px;
+        height: auto;
+        border-radius: 10px;
+        transition:  0.3s ease-in-out;
+    }
+            /* 1 -------------- ASOCIAR PACIENTE ----------------------------------------- */ 
+            #asociarpaciente{background-color:lightgrey;
+                               height: 100%;}
+            
+            #asociarpaciente:hover{background-color:yellow;
+                box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);}
+            /* 1 -------------- notas ----------------------------------------- */ 
+            #homecrearreceta{background-color:lightgrey;}  
+            #homecrearreceta:hover{background-color: yellow;
+                        box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);}  
+
+
+/* BOTONES DE 1 2 Y 3 --------------------------- */
+
+            /*BOTON*/
+            #btnperfilmedico,#btnmispacientes,#btnmedicamentos{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                margin: 30px 0 0 0;
+                /* width: 160px; */
+                border-radius: 20px;
+                font-weight:normal ;
+                font-size: 14px;
+                transition: 0.3s ease-in-out;
+                color: rgb(72, 72, 72);
+                background-color: white;
+            }
+                    #btnperfilmedico:hover {box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
+                        color: #00669C;}
+                    #btnmispacientes:hover {box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
+                        color: #84CBF1;}
+                    #btnmedicamentos:hover{box-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
+                        color: #dac47c;}
+
+                     
+/* MAX WIDTH 1270PX----------------------------------------------------------------------------*/
+@media screen and (max-width: 1270px) {
+
+    .medico-item-pacientes,.medico-item-medicamentos{width :50%;} 
+    .infomispacientes{width :50%;} 
+    /* .infomispa{height: 60px;} */
+    .infomispa{  display: block;}
+    .infotexto{height: 60px;
+    margin: 0px;}
+    .textotitulo{margin: 0px 10px;}
+
+
+    .medico-item{width :100%; }
+
+
+}
+
+
+/* MAX WIDTH 1270PX----------------------------------------------------------------------------*/
+
+@media (max-width: 770px) {
+    .medico-item-pacientes,.medico-item-medicamentos{width :100%;} 
+    .infomispacientes{width :100%;} 
+    .infomispa{height:auto;}
+    .infotexto{flex:1;
+        align-items: center;
+        margin: 20px;
+        display: flex;}
+
+.perfil-section{width :100%; }
+
+}
+
+
+
+ 

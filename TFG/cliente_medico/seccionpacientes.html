@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME MEDICO</title>
+    <!-- --------------------------------- -->
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/cliente.css">
+
+
+    <link rel="stylesheet" href="../styles/medico.css">
+    <!-- --------------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- --------------------------------- -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- --------------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- --------------------------------- -->
+</head>
+
+<body >
+ 
+    <!-- HEADER CLIENTE UNO------------------------------------------------------- -->
+    <header id="header-cliente-uno">
+
+        <nav class="nav-cliente-uno">
+            <ul>
+                <li><a href="#about-us"><img src="../img/medicadeblue.png" alt="medicade" class="logo-about-us" style="width: 90px;"></a></li>
+                <li>
+                    <a class="nombre-usuario">  </a>
+                </li>
+                <li class="tipo-cuenta">TU CUENTA ES TIPO :  
+                    <a id="paciente-text">  </a> <!-- Aquí se va a cambiar el tipo -->
+                </li>
+                <li><a class="cerrar-sesion-cliente">CERRAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HEADER CLIENTE DOS------------------------------------------------------- -->
+    <header id="header-cliente-dos">
+        <nav class="nav-cliente-dos">
+            <ul>
+                <li><a href="#about">SOBRE NOSOTROS</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+                <li><a href="#support">SOPORTE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- MAIN-USUARIO ------------------------------------------------------- -->
+    <main id="usuario-main">
+        <a href="../HomeMedico.html" class="BtnVolverHome"> ← Volver a Inicio</a>
+        <h1 class="cliTitulos">Sección Pacientes</h1>
+        <!-- Sección con los divs de contenido -->
+        <section id="usuario-divs-container">
+
+  <!-- GESTIO MEDICAMENTOS ------------------------------------------------------- -->
+
+<div class="usu-div-med">
+
+
+        <!-- ASOCIAR PACIENTE Y CREAR RECETA  ------------------------------ -->
+                 <div  class="seccion-card-duo" >         
+                    <div  id="section-cliente-perfil">
+                        <div class="textocartilla">
+                            
+                            <h2>Asociar Paciente</h2>                     
+                            <div id="unico">
+                                <!-- Formulario para asociar paciente -->
+                                <!-- <label for="numeroColegiado">Número de Colegiado:</label> -->
+                                <input type="hidden" id="numeroColegiado" required readonly>
+                                <br>
+                            
+                                <label for="correoPaciente">Correo del Paciente:</label>
+                                <input type="email" id="correoPaciente" required>
+                                <br>
+                            
+                                <button id="btnAsociarPaciente">Asociar Paciente</button>
+                            
+                                <!-- Área para mostrar el mensaje de éxito o error -->
+                                <div id="mensajeAsociacion"></div>
+                            
+                                <!-- Vinculamos el archivo JS -->
+                                <script src="AsociarPaciente.js"></script>
+                            </div>
+                                        
+     
+
+                        </div>
+                    </div>
+                 </div>      
+        <!-- MIS PACIENTES  ------------------------------ -->  
+                <div  class="seccion-card-duo" >         
+                 <div  id="section-cliente-dos">
+
+                      <div class="textocartilla">
+                                            
+                                    <h2>Mis Pacientes</h2>
+                                    <div id="pacientes"></div>          
+                      
+                                    <script src="seccionPacientes.js"></script>
+                        
+                        </div>
+                  </div>
+               </div> 
+      
+               
+    </div>          
+
+<!--  DIV 5 -------------- -->
+
+            <div class="usuario-div usuario-div-cinco">
+                    <div id="historial-pacientes"></div>
+
+                    <script src="verHistorialPaciente.js"></script>
+                    
+                    <script src="verRecetasPaciente.js"></script>
+                    
+            </div> 
+
+            <!-- DIV 6 FOOTER --------------- -->
+            <div class="usuario-div-seis">
+                            <!-- ---------------- RRSS -->
+                            <div class="usu-footer" id="rrss"> 
+                                <h4>NUESTRAS REDES SOCIALES</h4>
+                                <ul>
+                                    <li><a href="https://www.instagram.com" target="_blank"><img src="../img/ico-insta-48.png" alt="Instagram"></a></li>
+                                    <li><a href="https://www.tiktok.com" target="_blank"><img src="../img/ico-tktk-48.png" alt="TikTok"></a></li>
+                                    <li><a href="https://twitter.com" target="_blank"><img src="../img/ico-x-48.png" alt="Twitter (X)"></a></li>
+                                    <li><a href="https://www.pinterest.com" target="_blank"><img src="../img/ico-pinterest-50.png" alt="Pinterest"></a></li>     
+                                </ul>
+                            </div>
+                            <!-- ---------------- NEWSLETTER -->
+                            <div class="usu-footer">
+                                <h4>NEWSLETTER</h4>
+                                <p>Recibe actualizaciones, recomendaciones o avisos de cambios que hagamos !</p>
+                                <div id="btn-usu-footer">
+                                    <a>UNIRSE</a>
+                                </div>
+                            </div>
+                            <!-- ---------------- NEWSLETTER -->
+                            <div class="usu-footer">
+                                <h4>CREAR CUENTA</h4>
+                                <p>Si aún no tienes una cuenta con nosotros puedes crear una y empieza a usarla.</p>
+                                <div id="btn-usu-footer">
+                                    <a>CREAR CUENTA</a>
+                                </div>
+                            </div>
+
+            </div>
+
+        </section>
+    </main>
+    <!-- FOOTER ------------------------------------------------------- -->
+    <footer id="footer-dos">
+        <ul>
+            <li><a>© 2025 All rights reserved.</a></li>
+            <li><a href="#privacy">Privacidad</a></li>
+            <li><a href="#terms">Condiciones de uso</a></li>
+            <li><a href="#cookies">Preferencias de cookies</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#help">Ayuda</a></li>
+        </ul>
+    </footer>
+    
+<!--SCRIPTS ------------------------------------------------------- -->
+      
+            <!-- Enlazamos al archivo main.js -->
+            <script src="../main.js"></script>
+
+          
+</body>
+</html>

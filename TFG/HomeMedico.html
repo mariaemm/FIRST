@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME MEDICO</title>
+    <!-- --------------------------------- -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/cliente.css">
+
+    <link rel="stylesheet" href="styles/medico.css">
+    <!-- --------------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- --------------------------------- -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- --------------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- --------------------------------- -->
+</head>
+
+<body >
+    <!-- HEADER CLIENTE UNO------------------------------------------------------- -->
+    <header id="header-cliente-uno">
+        <nav class="nav-cliente-uno">
+            <ul>
+                <li><a href="#about-us"><img src="img/medicadeblue.png" alt="medicade" class="logo-about-us" style="width: 90px;"></a></li>
+                <li>
+                    <a class="nombre-usuario">  </a>
+                </li>
+                <li class="tipo-cuenta">TU CUENTA ES TIPO :  
+                    <a id="paciente-text">  </a> <!-- Aquí se va a cambiar el tipo -->
+                </li>
+                <li><a class="cerrar-sesion-cliente">CERRAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HEADER CLIENTE DOS------------------------------------------------------- -->
+    <header id="header-cliente-dos">
+        <nav class="nav-cliente-dos">
+            <ul>
+                <li><a href="#about">SOBRE NOSOTROS</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+                <li><a href="#support">SOPORTE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- MAIN-USUARIO ------------------------------------------------------- -->
+    <main id="usuario-main">
+       
+    <!-- -------------- EN STYLES.CSS -->
+    <section id="usuario-divs-container">
+<!--  1 ----------------------------------- -->           
+            <div class="usu-div-med">
+                <!--  VER MI PERFIL -------------- -->
+                 <div  class="medico-item" >         
+                    <div  id="miperfilmedico">
+                        <div class="icono">
+                            <img src="img/ico-saludo-48.png" alt="saludo" >
+                        </div>
+                        <div class="texto">
+                             <p id="btnperfilmedico">VER MI PERFIL</p>   
+                            <p class="texto3" >Puedes ver los datos de tu cuenta</p>       
+                        </div>
+                    </div>
+                 </div>      
+                 <!--  VER MI PERFIL -------------- -->
+                <div  class="medico-item" >         
+                 <div  id="nota">
+                         <div class="icono">
+                         <img src="img/ico-rec-64.png" alt="historial" >
+                     </div>
+                      <div class="texto">
+                           INFORMACION
+                         <p class="texto3">EL ESTADO DE TU CUENTA ES : ------ ACTIVO</p>    
+                      
+                        </div>
+                  </div>
+               </div>    
+             </div>
+
+<!--  2 ----------------------------------- -->  
+            <h2 >Sección Pacientes</h2>
+            <div class="usu-div-med">
+            <!-- ----------------------------------- -->    
+                    <!-- MIS PACIENTES--------------------- -->                
+                    <div class="medico-item-pacientes">             
+                        <div  id="seccionpacientes">
+                            <div class="icono">
+                                <img src="img/ico-pacientes-64.png" alt="saludo" >
+                            </div>
+                            <div class="texto">
+                                <p id="btnmispacientes">MIS PACIENTES</p>   
+                                <p class="texto2" >Puedes ver la lista de tus pacientes</p>       
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXTOS INFORMACION - MIS PACIENTES--------------------- --> 
+                    <div class="infomispacientes">             
+                        <div  class="infomispa">
+                            <div class="infotexto"> 
+                                <div class="textotitulo">1</div>
+                                <p class="texto4"> Puedes ver tu <a class="bold">Lista </a> de pacientes </p>       
+                            </div>
+                            <div class="infotexto">
+                                <div class="textotitulo">2</div>     
+                                <p class="texto4"> Puedes ver el <a class="bold">Historial</a> de cada Paciente</p>
+                            </div>
+                            <div class="infotexto">
+                                <div class="textotitulo">3</div>       
+                                <p class="texto4"> Puedes ver las <a class="bold">Rectas</a> de cada Paciente</p>       
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+<!--  4 ----------------------------------- -->           
+        <div class="usu-div-med">
+                <!--  ASOCIAR PACIENTE -------------- -->
+                 <div  class="medico-item asociarcrear" >         
+                    <div  id="asociarpaciente"> <!--NOMBRE-->
+                        
+
+                        <div class="texto">
+                                 <h2>Asociar Paciente</h2>                     
+                            
+                            <div id="unico">
+                                <!-- Formulario para asociar paciente -->
+                                <!-- <label for="numeroColegiado">Número de Colegiado:</label> -->
+                                <input type="hidden" id="numeroColegiado" required readonly>
+                                <br>
+                            
+                                <label for="correoPaciente">Correo del Paciente:</label>
+                                <input type="email" id="correoPaciente" required>
+                                <br>
+                            
+                                <button id="btnAsociarPaciente">Asociar Paciente</button>
+                            
+                                <!-- Área para mostrar el mensaje de éxito o error -->
+                                <div id="mensajeAsociacion"></div>
+                            
+                                <!-- Vinculamos el archivo JS -->
+                                <script src="cliente_medico/AsociarPaciente.js"></script>
+                            </div>
+                                        
+                        </div>
+                    </div>
+                 </div>      
+                 <!--  VER MI PERFIL -------------- -->
+                <div  class="medico-item" >         
+                 <div  id="homecrearreceta">
+
+                      <div class="texto">
+                          <h2>Crear Receta</h2>     
+                              <div id="resultadoDiv"></div>
+
+                            <script src="cliente_medico/CrearReceta.js"></script>
+  
+                      
+                        </div>
+                  </div>
+               </div>    
+        </div>
+
+
+<!--  3 ----------------------------------- --> 
+
+<h2>Sección Medicamentos</h2>
+<div class="usu-div-med">
+<!-- ----------------------------------- -->    
+    
+         <!-- MIS PACIENTES--------------------- -->                
+        <div class="medico-item-pacientes">             
+            <div  id="verseccionmedicamentos">
+                <div class="icono">
+                    <img src="img/ico-seccionmedicamentos-64.png" alt="saludo" >
+                </div>
+                <div class="texto">
+                    <p id="btnmedicamentos">MEDICAMENTOS</p>   
+                    <p class="texto2" >Puedes ver la lista de tus pacientes</p>       
+                </div>
+            </div>
+        </div>
+        <!-- TEXTOS INFORMACION - MIS PACIENTES--------------------- --> 
+        <div class="infomispacientes">             
+            <div  class="infomispa">
+                <div class="infotexto"> 
+                    <div class="textotitulo">1</div>
+                    <p class="texto4"> Puedes ver todos los medicamentos que hay en la <a class="bold">Lista </a> </p>       
+                </div>
+                <div class="infotexto">
+                    <div class="textotitulo">2</div>     
+                    <p class="texto4"> Puedes <a class="bold">Dar de Alta </a> un nuevo medicamento que no esté en la Lista </p>
+                </div>
+                <div class="infotexto">
+                    <div class="textotitulo">3</div>       
+                    <p class="texto4"> Dispones de un <a class="bold">Buscador</a> para la lista de medicamentos</p>       
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+
+
+<!-- DIV 6 FOOTER --------------- -->
+            <div class="usuario-div-seis">
+                            <!-- ---------------- RRSS -->
+                            <div class="usu-footer" id="rrss"> 
+                                <h4>NUESTRAS REDES SOCIALES</h4>
+                                <ul>
+                                    <li><a href="https://www.instagram.com" target="_blank"><img src="img/ico-insta-48.png" alt="Instagram"></a></li>
+                                    <li><a href="https://www.tiktok.com" target="_blank"><img src="img/ico-tktk-48.png" alt="TikTok"></a></li>
+                                    <li><a href="https://twitter.com" target="_blank"><img src="img/ico-x-48.png" alt="Twitter (X)"></a></li>
+                                    <li><a href="https://www.pinterest.com" target="_blank"><img src="img/ico-pinterest-50.png" alt="Pinterest"></a></li>     
+                                </ul>
+                            </div>
+                            <!-- ---------------- NEWSLETTER -->
+                            <div class="usu-footer">
+                                <h4>NEWSLETTER</h4>
+                                <p>Recibe actualizaciones, recomendaciones o avisos de cambios que hagamos !</p>
+                                <div id="btn-usu-footer">
+                                    <a>UNIRSE</a>
+                                </div>
+                            </div>
+                            <!-- ---------------- NEWSLETTER -->
+                            <div class="usu-footer">
+                                <h4>CREAR CUENTA</h4>
+                                <p>Si aún no tienes una cuenta con nosotros puedes crear una y empieza a usarla.</p>
+                                <div id="btn-usu-footer">
+                                    <a>CREAR CUENTA</a>
+                                </div>
+                            </div>
+
+            </div>
+        
+    </section>
+    </main>
+<!-- FOOTER ------------------------------------------------------- -->
+    <footer id="footer-dos">
+        <ul>
+            <li><a>© 2025 All rights reserved.</a></li>
+            <li><a href="#privacy">Privacidad</a></li>
+            <li><a href="#terms">Condiciones de uso</a></li>
+            <li><a href="#cookies">Preferencias de cookies</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#help">Ayuda</a></li>
+        </ul>
+    </footer>
+    
+<!--SCRIPTS ------------------------------------------------------- -->
+            <script src="main.js"></script>
+            <script src="cliente_medico/enlaces.js"></script>
+  
+</body>
+</html>

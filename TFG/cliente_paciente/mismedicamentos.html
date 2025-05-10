@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Recetas</title>
+    <!-- --------------------------------- -->
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/cliente.css">
+    <!-- --------------------------------- -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- --------------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- --------------------------------- -->
+    <style>
+        /* Modal Background */
+/* Modal Background */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+        /* Modal Content */
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #84CBF1; /*  #84CBF1 */
+            width: 50%;
+            max-width: 700px; /* Increased max-width for larger modal */
+            min-width: 400px; /* Set a minimum width for better responsiveness */
+            text-align: left;
+            position: relative;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Allow scrolling if content is too large */
+        }
+
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Confirm Button */
+        .confirm-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .confirm-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Open Modal Button */
+        .open-modal-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+            font-size: 16px;
+        }
+
+        .open-modal-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Ensure spacing between content */
+        .modal-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- HEADER CLIENTE------------------------------------------------------- -->
+    <header id="header-cliente-uno">
+        <nav class="nav-cliente-uno">
+            <ul>
+                <li><a href="#about-us"><img src="../img/medicadeblue.png" alt="medicade" class="logo-about-us" style="width: 90px;"></a></li>
+                <li><a class="nombre-usuario"></a></li>
+                <li class="tipo-cuenta">TU CUENTA ES TIPO   
+                    <a id="paciente-text"></a>
+                </li>
+                <li><a class="cerrar-sesion-cliente">CERRAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HEADER CLIENTE DOS------------------------------------------------------- -->
+    <header id="header-cliente-dos">
+        <nav class="nav-cliente-dos">
+            <ul>
+                <li><a href="#about">SOBRE NOSOTROS</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+                <li><a href="#support">SOPORTE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN-USUARIO ------------------------------------------------------- -->
+    <main id="usuario-main">
+        <div id="seccion-medicamentos">  
+            <h1 class="cliTitulos">Mis Medicamentos</h1>
+
+            <table id="tablaMedicamentosPaciente">
+                <thead>
+                    <tr>
+                        <th>Nombre del Medicamento</th>
+                        <th>Cantidad Disponible</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas se agregarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <a href="../HomeCliente.html" id="volverHomeCli">Volver al inicio</a>
+
+        <!-- Modal de Bajo Stock (fuera del <main>, más limpio) -->
+        <div id="modalBajoStock" class="modal">
+            <div class="modal-content">
+                <span id="closeModalBajoStockBtn" class="close">&times;</span>
+                <h2 style="color: #d9534f;">⚠ Alerta de Bajo Stock</h2>
+                <div id="contenidoBajoStock">
+                    Cargando alerta...
+                </div>
+                <button id="confirmBtn" class="confirm-btn">Leído</button>
+            </div>
+        </div>
+
+        <!-- Botón para probar la apertura manual del modal -->
+        <button id="btnAbrirBajoStock" class="open-modal-btn">
+            Ver Alerta de Bajo Stock
+        </button>
+
+    </main>
+
+    <!-- JS de funcionalidades -->
+    <script src="misMedicamentos.js"></script>
+    <script src="alertamodalbajostock.js"></script>
+    <script src="../main.js"></script>
+
+    <script>
+        document.getElementById("btnAbrirBajoStock").addEventListener("click", function () {
+            document.getElementById("modalBajoStock").classList.add("show");
+        });
+    
+        document.getElementById("closeModalBajoStockBtn").addEventListener("click", function () {
+            document.getElementById("modalBajoStock").classList.remove("show");
+        });
+    
+        document.getElementById("confirmBtn").addEventListener("click", function () {
+            document.getElementById("modalBajoStock").classList.remove("show");
+        });
+    </script>
+    
+</body>
+</html>

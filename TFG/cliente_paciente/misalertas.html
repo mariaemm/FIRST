@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Alertas Médicas</title>
+    <!-- --------------------------------- -->
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/cliente.css">
+    <!-- --------------------------------- -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- --------------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- --------------------------------- -->
+    <!-- CSS -->
+    <style>
+        /* Modal Background */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #84CBF1; /*  #84CBF1 */
+            width: 50%;
+            max-width: 700px; /* Increased max-width for larger modal */
+            min-width: 400px; /* Set a minimum width for better responsiveness */
+            text-align: left;
+            position: relative;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Allow scrolling if content is too large */
+        }
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Confirm Button */
+        .confirm-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .confirm-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Open Modal Button */
+        .open-modal-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+            font-size: 16px;
+        }
+
+        .open-modal-btn:hover {
+            background-color: #218838;
+        }
+
+
+
+        /* Ensure spacing between content */
+        .modal-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    
+<!-- HEADER CLIENTE ------------------------------------------------------- -->
+   
+    <header id="header-cliente-uno">
+        <nav class="nav-cliente-uno">
+            <ul>
+                <li><a href="#about-us"><img src="../img/medicadeblue.png" alt="medicade" class="logo-about-us" style="width: 90px;"></a></li>
+                <li>
+                    <a class="nombre-usuario">  </a>
+                </li>
+                <li class="tipo-cuenta">TU CUENTA ES TIPO   
+                    <a id="paciente-text">  </a>
+                </li>
+                <li><a class="cerrar-sesion-cliente">CERRAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN-USUARIO ------------------------------------------------------- -->
+    <main id="usuario-main">
+        <a href="../HomeCliente.html" id="volverHomeCli">Volver al inicio</a>
+        <h1 class="cliTitulos">Mis Alertas Médicas</h1>
+
+        <div id="mis-alertas-medicas"></div>
+        <a href="#" id="scrollToTop">VOLVER HACIA ARRIBA</a>
+        <script src="misAlertas.js"></script>
+        <script src="alertamodal.js"></script>
+
+<!-- Botón para abrir la modal -->
+<button id="openModalBtn" class="open-modal-btn">VER LA ALERTA MÁS PRÓXIMA A LA TOMA</button>
+
+<!-- Modal de alerta médica -->
+<div id="modalalerta" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <p>Este es el mensaje de la alerta médica.</p>
+        <button id="confirmBtn" class="confirm-btn">Leído</button>
+    </div>
+</div>
+
+    </main>
+
+    <!-- FOOTER ------------------------------------------------------- -->
+    <footer id="footer-dos">
+        <ul>
+            <li><a>© 2025 All rights reserved.</a></li>
+            <li><a href="#privacy">Privacidad</a></li>
+            <li><a href="#terms">Condiciones de uso</a></li>
+            <li><a href="#cookies">Preferencias de cookies</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#help">Ayuda</a></li>
+        </ul>
+    </footer>
+
+    <!--SCRIPTS ------------------------------------------------------- -->
+    <script src="../main.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("openModalBtn").addEventListener("click", function() {
+            document.getElementById("modalalerta").style.display = "flex";
+
+            // Configurar el temporizador para cerrar el modal en 30 segundos
+            setTimeout(function() {
+                document.getElementById("modalalerta").style.display = "none";
+            }, 10000); // 30000 ms = 30 segundos
+        });
+
+        document.getElementById("closeModalBtn").addEventListener("click", function() {
+            document.getElementById("modalalerta").style.display = "none";
+        });
+
+        document.getElementById("confirmBtn").addEventListener("click", function() {
+            document.getElementById("modalalerta").style.display = "none";
+        });
+    </script>
+
+<script>
+    document.getElementById("scrollToTop").addEventListener("click", function(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto del enlace
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+
+</body>
+</html>
